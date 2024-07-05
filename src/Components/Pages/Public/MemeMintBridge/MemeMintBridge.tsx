@@ -452,27 +452,9 @@ const MemeMintBridge = () => {
   return (
     <>
       <section className="lib_bridge_page">
-        <CommonHeading heading="MemeMint Bridge" centered />
+        <CommonHeading heading="Solana stake" centered />
         <div className="bridge_card">
-          <div className="bridge_card_header">
-            {!selectedNetworkFrom?.name && !selectedNetworkTo?.name ? (
-              <p className="emphasize">Select your network first</p>
-            ) : (
-              <p className="emphasize">Choose the chain for Transaction</p>
-            )}
-
-            <button
-              type="button"
-              onClick={() => {
-                getTransactionHistory();
-                setShowHistory(true);
-              }}
-            >
-              History
-            </button>
-          </div>
-
-          <form onSubmit={formik.handleSubmit}>
+          {/* <form onSubmit={formik.handleSubmit}>
             <div className="bridge_card_inner">
               <div className="select_network">
                 <div className="select_network_box">
@@ -622,7 +604,7 @@ const MemeMintBridge = () => {
                 />
               )}
             </div>
-          </form>
+          </form> */}
         </div>
         <ChooseNetwork
           networks={[

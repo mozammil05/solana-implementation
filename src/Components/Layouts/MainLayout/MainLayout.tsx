@@ -60,55 +60,55 @@ const MainLayout = () => {
   }, [connector?.name]);
 
   const getAllowedChainNames = () => {
-    let result: any 
-    let tempArray:any = [];
+    let result: any;
+    let tempArray: any = [];
     ALLOWED_CHAIN_NAME.forEach((item: any) => {
       tempArray.push(item);
       result = tempArray.join(" or ");
     });
     setAllowedChainNames(result);
-  }
+  };
 
   useEffect(() => {
     getAllowedChainNames();
-  }, [])
+  }, []);
 
   return (
     <>
       <main className="MainLayout">
         <Container fluid="xl">
           <header className="MainLayoutHeader">
-            <Link to="/">
-              <img src={logo} alt="logo" />
-            </Link>
+            <Link to="/">{/* <img src={logo} alt="logo" /> */}</Link>
             <>
               {/* {address && CONNECTED_CHAIN_ID?.id !== ALLOWED_CHAIN_ID && ( */}
-              {address && !ALLOWED_CHAIN_ID.includes(CONNECTED_CHAIN_ID?.id) && (
-                <div className="wrong-network">
-                  <h6>
-                    <strong>Wrong Network</strong>
-                  </h6>
-                  <p>
-                    Please switch to the {allowedChainNames} in your{" "} {isMobileButNotDappBrowser && " mobile "}
-                    wallet{" "}
-                    {/* below will come if isMobileButNotDappBrowser or if !isMobile && wc === walletconnect */}
-                    {isDesktopBrowserButConnectedViaWalletConnect ||
-                      (isMobileButNotDappBrowser &&
-                        `and restart the wallet application to use the platform
+              {address &&
+                !ALLOWED_CHAIN_ID.includes(CONNECTED_CHAIN_ID?.id) && (
+                  <div className="wrong-network">
+                    <h6>
+                      <strong>Wrong Network</strong>
+                    </h6>
+                    <p>
+                      Please switch to the {allowedChainNames} in your{" "}
+                      {isMobileButNotDappBrowser && " mobile "}
+                      wallet{" "}
+                      {/* below will come if isMobileButNotDappBrowser or if !isMobile && wc === walletconnect */}
+                      {isDesktopBrowserButConnectedViaWalletConnect ||
+                        (isMobileButNotDappBrowser &&
+                          `and restart the wallet application to use the platform
                 seamlessly. Watch the video if you are still facing issues:-`)}
-                    {isDesktopBrowserButConnectedViaWalletConnect ||
-                      (isMobileButNotDappBrowser && (
-                        <a
-                          href="https://www.youtube.com/watch?v=Ek8YEuRuxV0"
-                          target="_blank"
-                          rel="noreferrer"
-                        >
-                          Click Here
-                        </a>
-                      ))}
-                  </p>
-                </div>
-              )}
+                      {isDesktopBrowserButConnectedViaWalletConnect ||
+                        (isMobileButNotDappBrowser && (
+                          <a
+                            href="https://www.youtube.com/watch?v=Ek8YEuRuxV0"
+                            target="_blank"
+                            rel="noreferrer"
+                          >
+                            Click Here
+                          </a>
+                        ))}
+                    </p>
+                  </div>
+                )}
             </>
             <WalletDropdown
               dropdownBtnRef={dropdownBtnRef}

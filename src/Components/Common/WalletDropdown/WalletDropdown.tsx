@@ -7,7 +7,6 @@ import { DAPP_URL_METAMASK, DAPP_URL_TRUSTWALLET } from "../../../constants";
 import { browserName, isMobile } from "react-device-detect";
 import { Connector, useAccount, useDisconnect, useNetwork } from "wagmi";
 import { useWeb3Modal } from "@web3modal/wagmi/react";
-import { getAccount, disconnect } from "@wagmi/core";
 import {
   WalletModalProvider,
   WalletDisconnectButton,
@@ -88,17 +87,6 @@ const WalletDropdown = ({ dropdownBtnRef, handleClose }) => {
     }
   }, [address]);
 
-  // useEffect(() => {
-  //   if (selectedNetwork !== "BSC" && selectedNetwork !== "Ethereum") {
-  //     if (typeof phantomWallet === "undefined") {
-  //       dispatch(setPhantomWalletAddress(""));
-  //       dispatch(setNetworkListFrom(""));
-  //       dispatch(setNetworkListTo(""));
-  //       dispatch(resetUserSlice());
-  //     }
-  //   }
-  // }, [phantomWallet, selectedNetwork, dispatch]);
-
   const { open } = useWeb3Modal();
   const isMobileButNotDappBrowser =
     isMobile &&
@@ -173,7 +161,7 @@ const WalletDropdown = ({ dropdownBtnRef, handleClose }) => {
 
   return (
     <div className="wallet_connector">
-      {walletAddress || phantomWallet ? (
+      {phantomWallet ? (
         <>
           {phantomWallet && (
             <div>
@@ -192,39 +180,7 @@ const WalletDropdown = ({ dropdownBtnRef, handleClose }) => {
         </>
       ) : (
         <>
-          {!selectedNetwork ? (
-            <div>
-              selectedNetwork === "BSC" || selectedNetwork === "Ethereum" ? (
-              <button
-                id="wallet-dropdown"
-                className="ButtonCustom connect_wallet bordered-green"
-                onClick={() => handleConnect(0)}
-                disabled={!selectedNetwork?.length}
-              >
-                Connect Wallet
-              </button>
-            </div>
-          ) : (
-            <div>
-              {selectedNetwork === "Solana" ? (
-                <WalletMultiButton
-                  children={"Connect Wallet"}
-                  // className="ButtonCustom connect_wallet bordered-green"
-                  className="lllllllllllllllllllllllllllll"
-                />
-              ) : selectedNetwork === "BSC" ||
-                selectedNetwork === "Ethereum" ? (
-                <button
-                  id="wallet-dropdown"
-                  className="ButtonCustom connect_wallet bordered-green"
-                  onClick={() => handleConnect(0)}
-                  disabled={!selectedNetwork?.length}
-                >
-                  Connect Wallet
-                </button>
-              ) : null}
-            </div>
-          )}
+          <WalletMultiButton children={"Connect Wallet"} />
         </>
       )}
     </div>
