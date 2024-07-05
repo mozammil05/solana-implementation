@@ -1,0 +1,135 @@
+// @import "./Assets/theme/_var.scss";
+@import "./Assets/theme/_var.scss";
+
+html {
+  font-size: 62.5%;
+  // 16px = 1.6rem;
+}
+
+body,
+code {
+  font-family: $baseFont;
+}
+
+body>iframe {
+  display: none;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+span {
+  @include theme() {
+    color: theme-get("textClr");
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
+img {
+  max-width: 100%;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+a,
+span {
+  display: inline-block;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-bottom: 0;
+}
+
+p,
+a {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+
+  @media (max-width: 991px) {
+    font-size: 1.4rem;
+  }
+}
+
+.container {
+  padding: 0 0.8rem;
+
+  &-fluid {
+    padding: 0 0.8rem;
+  }
+}
+
+.row {
+  margin: 0 -0.8rem;
+
+  >div {
+    padding: 0 0.8rem;
+  }
+}
+
+.modal-backdrop {
+  &.show {
+    background: #04011840;
+    backdrop-filter: blur(0.75rem);
+  }
+}
+
+.modal {
+  .modal_close_btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    z-index: 1;
+    transition: 200ms ease-in-out;
+
+    &:hover {
+      transform: rotate(180deg);
+    }
+  }
+}
+
+input::-webkit-inner-spin-button {
+  display: none;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+  appearance: textfield;
+  -webkit-appearance: textfield;
+}
+
+
+.table {
+  --bs-table-bg: transparent;
+}

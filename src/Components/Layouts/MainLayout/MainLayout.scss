@@ -1,0 +1,228 @@
+@import "../../../Assets/theme/_var.scss";
+
+.MainLayout {
+  overflow: hidden auto;
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  padding-bottom: 4rem;
+
+  @include theme() {
+    background: theme-get('mainLayoutbg');
+  }
+
+  &::before {
+    content: "";
+    width: 805px;
+    height: 805px;
+    border-radius: 50%;
+    position: fixed;
+    left: -101px;
+    top: -374px;
+    z-index: -1;
+
+    @include theme() {
+      background: theme-get('mainLayoutCircle1');
+    }
+  }
+
+  &::after {
+    content: "";
+    right: -170px;
+    bottom: -330px;
+    width: 805px;
+    height: 805px;
+    border-radius: 50%;
+    position: fixed;
+    z-index: -1;
+
+    @include theme() {
+      background: theme-get('mainLayoutCircle2');
+    }
+  }
+
+  div[class*='container'] {
+    @media (max-width: 1199px) {
+      padding: 0 1.5rem;
+    }
+  }
+
+  .MainLayoutHeader {
+    padding: 3.4rem 0 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    a {
+      img {
+        max-width: 18.5rem;
+        width: 100%;
+      }
+    }
+
+    .wallet_dropdown {
+      .connect_wallet {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        font-weight: 400;
+
+        &::after {
+          content: unset;
+        }
+
+        &:active {
+          background-color: transparent;
+          box-shadow: none;
+
+          @include theme() {
+            border-color: theme-get("greenClr");
+          }
+        }
+
+        @media (max-width: 575px) {
+          padding: 0 1rem;
+          font-size: 1.4rem;
+          margin-left: 0.8rem;
+        }
+      }
+
+      .dropdown-menu {
+        width: 44.7rem;
+        right: 0 !important;
+        top: 1rem !important;
+        border-radius: 1rem;
+        left: unset !important;
+        max-width: 44.7rem;
+        padding: 0;
+        box-shadow: 0px 8px 16px rgba(3, 7, 19, 0.56);
+
+        @include theme() {
+          background-color: theme-get("commonCardBg");
+        }
+
+        .menu_header {
+          display: flex;
+          align-items: center;
+          padding: 1.6rem 1.4rem;
+
+          @media (max-width: 991px) {
+            padding: 1rem 1.4rem 0;
+          }
+
+          h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 2.4rem;
+          }
+
+          .modal_close_btn {
+            border: none;
+            outline: none;
+            margin-left: auto;
+            background-color: transparent;
+            z-index: 1;
+            transition: 200ms ease-in-out;
+
+            &:hover {
+              transform: rotate(180deg);
+            }
+          }
+        }
+
+        .menu_body {
+          padding: 1.8rem 1.4rem 1.6rem;
+
+          p {
+            font-size: 1.8rem;
+            line-height: 2.7rem;
+            font-weight: 400;
+            margin-bottom: 2rem;
+
+            @include theme() {
+              color: theme-get('theadClr');
+            }
+
+            @media (max-width: 991px) {
+              font-size: 1.6rem;
+              line-height: 2.4rem;
+            }
+
+            @media (max-width: 767px) {
+              font-size: 1.4rem;
+              line-height: 2.1rem;
+            }
+          }
+
+          ul {
+            li {
+              margin-bottom: 1.6rem;
+
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              button {
+                display: flex;
+                align-items: center;
+                font-size: 1.6rem;
+                line-height: 2.4rem;
+                font-weight: 500;
+                padding: 0;
+                border: none;
+                outline: none;
+                height: 7.2rem;
+                padding: 0 1.6rem;
+                width: 100%;
+                border-radius: 1rem;
+                transition: 200ms ease-in-out;
+
+                @media (max-width: 991px) {
+                  height: 5rem;
+                }
+
+                svg,
+                img {
+                  width: 4rem;
+                  height: 4rem;
+                  margin-right: 1rem;
+
+                  @media (max-width: 991px) {
+                    width: 3rem;
+                    height: 3rem;
+                  }
+                }
+
+                @include theme() {
+                  color: theme-get("textClr");
+                  background-color: theme-get('tokenSelect');
+                }
+
+                &:hover,
+                &:active {
+                  @include theme() {
+                    background-color: theme-get('tokenSelected');
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+
+    @media (max-width: 1279px) {
+      padding: 2rem 0 1.6rem 0;
+    }
+
+    @media (max-width: 767px) {
+      text-align: center;
+
+      a {
+        img {
+          max-width: 14rem;
+        }
+      }
+    }
+  }
+}

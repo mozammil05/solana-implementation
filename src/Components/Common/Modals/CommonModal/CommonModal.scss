@@ -1,0 +1,35 @@
+@import '../../../../Assets/theme/_var.scss';
+
+.common_modal {
+    .modal-dialog {
+        max-width: 49rem;
+        padding: 2rem;
+
+        .modal-content {
+            border-radius: 1rem;
+
+            @include theme() {
+                background-color: theme-get('commonCardBg');
+            }
+        }
+
+        .modal-header {
+            border-bottom: 0;
+            padding: 1.6rem 1.4rem;
+
+            @include theme() {
+                color: theme-get("textClr");
+            }
+
+            .modal-title {
+                font-size: 1.6rem;
+                font-weight: 600;
+                line-height: 2.4rem;
+            }
+        }
+
+        .modal-body {
+            padding: 1.7rem 001.4rem;
+        }
+    }
+}

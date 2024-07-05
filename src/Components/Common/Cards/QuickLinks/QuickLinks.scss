@@ -1,0 +1,57 @@
+@import '../../../../Assets/theme/_var.scss';
+
+.QuickLinks {
+    ul {
+        li {
+            margin-bottom: 1.6rem;
+
+            @media (max-width: 1199px) {
+                margin-bottom: 1rem;
+            }
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            .QuickLink {
+                height: 5.6rem;
+                display: flex;
+                align-items: center;
+                padding: 0 1.6rem;
+
+                @media (max-width: 991px) {
+                    height: 5rem;
+                }
+
+                @media (max-width: 767px) {}
+
+                span {
+                    &:first-child {
+                        margin-right: 0.8rem;
+                    }
+
+                    &:last-child {
+                        margin-left: auto;
+                        transition: 200ms ease-in-out;
+                    }
+                }
+
+                &:hover {
+                    span {
+                        &:last-child {
+                            transform: translate(0.4rem, -0.4rem);
+                        }
+
+                        svg {
+                            path {
+                                @include theme() {
+                                    fill: theme-get('textClr')
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,87 @@
+@import '../../../Assets/theme/_var.scss';
+
+.CustomTable {
+    thead {
+        tr {
+            th {
+                padding: 1.6rem 2.4rem;
+                border: none;
+                font-size: 1.4rem;
+                line-height: 2.1rem;
+                vertical-align: middle;
+                white-space: nowrap;
+                font-weight: 600;
+
+                @include theme() {
+                    color: theme-get('textClr');
+                }
+
+                @media (max-width: 991px) {
+                    padding: 1rem 1.8rem;
+                }
+
+                @media (max-width:767px) {
+                    padding: 1rem 1.6rem;
+                }
+
+                @media (max-width: 575px) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+    }
+
+    tbody {
+        tr {
+            td {
+                border: none;
+                padding: 1.6rem 2.4rem;
+                font-size: 1.4rem;
+                vertical-align: middle;
+                white-space: nowrap;
+                line-height: 2.1rem;
+                font-weight: 600;
+
+                @media (max-width: 991px) {
+                    padding: 1rem 1.8rem;
+                }
+
+                @media (max-width:767px) {
+                    padding: 1rem 1.6rem;
+                }
+
+                @media (max-width: 575px) {
+                    font-size: 1.2rem;
+                }
+
+                @include theme() {
+                    color: theme-get('textClr');
+                }
+
+                .arrow_btn {
+                    border: none;
+                    outline: none;
+                    background-color: transparent;
+                    transition: 100ms ease-in-out;
+                    width: 3.4rem;
+                    height: 3.4rem;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    &:hover {
+                        transform: translateX(1rem);
+                    }
+
+                    svg {
+                        path {
+                            @include theme() {
+                                fill: theme-get("buyBtn");
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

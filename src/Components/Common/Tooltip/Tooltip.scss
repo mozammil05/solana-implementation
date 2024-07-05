@@ -1,0 +1,43 @@
+@import '../../../Assets/theme/_var.scss';
+
+.tooltip_btn {
+    cursor: pointer;
+
+    svg {
+        width: 1.6rem;
+        height: auto;
+    }
+}
+
+.CommonTooltip {
+    .tooltip-arrow {
+        &::before {
+            @include theme() {
+                border-right-color: theme-get("tokenSelect");
+            }
+        }
+    }
+
+    .tooltip-inner {
+        padding: 1rem 1.4rem;
+        border-radius: 0.8rem;
+        text-align: left;
+
+        @include theme() {
+            background-color: theme-get("tokenSelect");
+            border: 1px solid theme-get("tokenSelected");
+        }
+
+        h4 {
+            font-size: 1.4rem;
+            font-weight: 400;
+            line-height: 2.1rem;
+        }
+
+        p {
+            font-size: 1.3rem;
+            line-height: 2rem;
+            margin-top: 0.2rem;
+        }
+    }
+}

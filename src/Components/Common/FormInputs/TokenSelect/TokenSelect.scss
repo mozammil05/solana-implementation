@@ -1,0 +1,129 @@
+@import '../../../../Assets/theme/_var.scss';
+
+.token_select {
+    max-width: 10.8rem;
+    z-index: 1;
+    position: relative;
+
+    .token_option {
+        display: flex;
+        align-items: center;
+
+        img {
+            width: 2rem;
+            height: 2rem;
+            margin-right: 0.8rem;
+            flex-shrink: 0;
+
+            @media (max-width: 1279px) {
+                width: 1.8rem;
+                height: 1.8rem;
+            }
+        }
+
+        p {
+            @include theme() {
+                color: theme-get('textClr');
+            }
+
+            @media (max-width: 1279px) {
+                font-size: 1.2rem;
+                line-height: 2rem;
+            }
+        }
+    }
+
+    .dropdown-toggle {
+        // max-width: 10.8rem;
+        min-width: 10.5rem;
+        box-shadow: none;
+        padding-left: 0.8rem;
+        border-radius: 0.8rem;
+        height: 3.2rem;
+        min-height: unset;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+
+        &:active {
+            @include theme() {
+                background-color: theme-get('tokenSelected');
+                border: 1px solid theme-get('tokenSelect');
+            }
+        }
+
+        &::after {
+            content: unset;
+        }
+
+        .down_arrow {
+            margin-left: auto;
+        }
+
+
+        @include theme() {
+            background-color: theme-get('tokenSelect');
+            border: 1px solid theme-get('tokenSelect');
+        }
+    }
+
+    .dropdown-menu {
+        right: 0 !important;
+        left: unset !important;
+        border-radius: 0.8rem;
+        overflow: hidden;
+        min-width: 19.6rem;
+        border-radius: 1rem;
+        padding: 0;
+
+        @include theme() {
+            background-color: theme-get('commonCardBg');
+        }
+
+        .Input {
+            margin: 1.6rem 1.6rem 0.8rem;
+
+            .InputInner {
+                input {
+                    font-size: 1.4rem;
+
+                    @include theme() {
+                        background: theme-get('tokenSelect')
+                    }
+
+                    &::placeholder {
+                        @include theme() {
+                            color: theme-get("theadClr");
+                        }
+                    }
+                }
+
+                @include theme() {
+                    svg {
+                        path {
+                            fill: theme-get('theadClr');
+                        }
+                    }
+                }
+            }
+        }
+
+        .dropdown-item {
+            padding: 0.6rem 1.6rem;
+            cursor: pointer;
+            margin-bottom: 0.1rem;
+            background-color: transparent;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            &.active,
+            &:hover {
+                @include theme() {
+                    background-color: theme-get("tokenSelected");
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,95 @@
+@import '../../../../Assets/theme/_var.scss';
+
+.OrderBookCard {
+    .contentBg {
+        padding: 1.6rem 2.4rem;
+    }
+
+    ul {
+        max-height: 39.7rem;
+        overflow: auto;
+        white-space: nowrap;
+
+        li {
+            height: 2.5rem;
+
+            &:first-child {
+                height: 4.5rem;
+            }
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            h3,
+            p {
+                font-size: 1.4rem;
+                font-weight: 600;
+                flex: 0 0 calc(100% / 3);
+                line-height: 2.1rem;
+
+                &:nth-child(2) {
+                    text-align: center;
+                }
+
+                &:last-child {
+                    text-align: right;
+                }
+            }
+
+            p {
+                font-weight: 400;
+
+                &.redText {
+                    @include theme() {
+                        color: theme-get('sellBtn');
+                    }
+                }
+
+                &.greenText {
+                    @include theme() {
+                        color: theme-get('greenClr');
+                    }
+                }
+            }
+
+            &.dataHeading {
+                padding: 1.6rem 0;
+                justify-content: flex-start;
+                height: unset;
+
+                h2 {
+                    font-size: 2rem;
+                    font-weight: 500;
+                    line-height: 3rem;
+
+                    @include theme() {
+                        color: theme-get("greenClr")
+                    }
+
+                    @media (max-width: 1279px) {
+                        font-size: 1.8rem;
+                    }
+
+                    @media (max-width: 991px) {
+                        font-size: 1.6rem;
+                    }
+                }
+
+                svg {
+                    margin: 0 1rem;
+                }
+
+                h6 {
+                    font-size: 1.4rem;
+                    font-weight: 400;
+                    line-height: 2.1rem;
+
+                    @include theme() {
+                        color: theme-get("portfolioPositiveTxt")
+                    }
+                }
+            }
+        }
+    }
+}

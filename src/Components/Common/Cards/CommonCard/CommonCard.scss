@@ -1,0 +1,56 @@
+@import '../../../../Assets/theme/_var.scss';
+
+.Card {
+    .CardHeader {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0.8rem;
+        padding: 0 1rem;
+
+        h3 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            line-height: 2.4rem;
+        }
+
+        a {
+            display: flex;
+            align-items: center;
+            margin-left: auto;
+            font-size: 1.4rem;
+            line-height: 2.1rem;
+
+            @include theme() {
+                color: theme-get("textClr");
+            }
+
+            span {
+                margin-left: 0.8rem;
+                transform: translateY(-2px);
+                transition: 200ms ease-in-out;
+            }
+
+            &:hover {
+                span {
+                    transform: translateY(-2px) translateX(1rem);
+                }
+            }
+        }
+    }
+
+    &.headerNoSpacing {
+        .CardHeader {
+            padding-left: 0;
+            margin-bottom: 1.4rem;
+        }
+    }
+
+    .contentBg {
+        padding: 1.6rem;
+        border-radius: 0.8rem;
+
+        @include theme() {
+            background-color: theme-get("commonCardBg");
+        }
+    }
+}

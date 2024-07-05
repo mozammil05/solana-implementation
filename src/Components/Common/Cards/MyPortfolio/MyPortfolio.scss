@@ -1,0 +1,123 @@
+@import '../../../../Assets/theme/_var.scss';
+
+.MyPortfolio {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+
+    .MyPortfolioContent {
+        position: relative;
+        height: 100%;
+        padding: 0 !important;
+
+        .MyPortfolioHeader {
+            font-family: $baseFont2;
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            padding: 1.6rem 1.45rem 0;
+
+            h3 {
+                font-size: 2.4rem;
+                font-weight: 700;
+                line-height: 2.905rem;
+                margin-bottom: 0.6rem;
+
+                @media (max-width: 1279px) {
+                    font-size: 2.2rem;
+                }
+
+                @media (max-width :1199px) {
+                    font-size: 2rem;
+                }
+
+                @media (max-width: 991px) {
+                    font-size: 1.8rem;
+                }
+
+                @media (max-width: 767px) {
+                    font-size: 1.6rem;
+                }
+            }
+
+            p {
+                font-size: 1.6rem;
+                line-height: 1.936rem;
+                font-weight: 700;
+
+                @media (max-width: 1279px) {
+                    font-size: 1.4rem;
+                }
+
+                @media (max-width: 767px) {
+                    font-size: 1.2rem;
+                }
+
+                span {
+                    &.danger {
+                        @include theme() {
+                            color: theme-get("portfolioNegativeTxt")
+                        }
+                    }
+
+                    &.positive {
+                        font-weight: 400;
+
+                        @include theme() {
+                            color: theme-get("portfolioPositiveTxt")
+                        }
+                    }
+                }
+            }
+
+            .SettingsBtn {
+                background-color: transparent;
+                border: none;
+                outline: none;
+                padding: 0;
+                transition: 300ms ease-in-out;
+
+                &:hover {
+                    transform: rotate(60deg);
+                }
+            }
+        }
+
+        .graphImg {
+            width: 100%;
+            margin: 2.7rem 0;
+        }
+
+        .MyPortfolioAction {
+            padding: 0 1.6rem 1.6rem;
+            display: flex;
+            align-items: center;
+
+            button {
+                flex: 1 1 5.583rem;
+                height: 3.4rem;
+                border-radius: 0.4rem;
+                text-align: center;
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+                background-color: transparent;
+                font-weight: 400;
+                border: 1px solid transparent;
+
+                @include theme() {
+                    color: theme-get("subHeaderLink");
+                }
+
+                &.active {
+                    @include theme() {
+                        color: theme-get("textClr");
+                        background: theme-get("subHeaderLinkActiveBg");
+                        border: 1px solid theme-get("subHeaderLinkActiveBorder");
+                    }
+                }
+            }
+        }
+    }
+
+}

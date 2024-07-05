@@ -1,0 +1,116 @@
+@import '../../../../Assets/theme/_var.scss';
+
+.TradeHistoryCard {
+    .TradeHistoryCardHeader {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-radius: 0.8rem 0.8rem 0 0;
+        padding: 1.6rem;
+
+        @include theme() {
+            background-color: theme-get('commonCardBg');
+        }
+
+        @media (max-width: 439px) {
+            display: block;
+        }
+
+        .TradeHistoryCardHeaderDate {
+            font-size: 1.6rem;
+            font-weight: 400;
+            line-height: 2.4rem;
+            padding: 0 0.8rem;
+            height: 4rem;
+            display: flex;
+            align-items: center;
+            border-radius: 0.4rem;
+
+            @include theme() {
+                background-color: theme-get('tradeHistoryDate');
+                border: 1px solid theme-get('tradeHistoryDate');
+            }
+
+            @media (max-width: 1279px) {
+                font-size: 1.4rem;
+                line-height: 2rem;
+            }
+
+            @media (max-width: 767px) {
+                font-size: 1.2rem;
+                line-height: 1.8rem;
+                height: 3.6rem;
+            }
+
+            @media (max-width :575px) {
+                height: 3.4rem;
+            }
+
+            svg {
+                margin-right: 0.8rem;
+            }
+        }
+
+        button {
+            @media (max-width: 439px) {
+                margin-top: 1rem;
+                width: 100%;
+            }
+        }
+    }
+
+    .table-responsive {
+        @include theme() {
+            background-color: theme-get('commonCardBg');
+            border-radius: 0 0 0.8rem 0.8rem;
+        }
+
+        table {
+            tbody {
+                tr {
+                    td {
+                        font-weight: 400;
+                        font-size: 1.6rem;
+                        line-height: 2.4rem;
+
+                        @media (max-width: 1279px) {
+                            font-size: 1.4rem;
+                        }
+
+                        &.value_text {
+                            h3 {
+                                font-size: 1.6rem;
+                                line-height: 2.4rem;
+                                font-weight: 400;
+
+                                @media (max-width: 1279px) {
+                                    font-size: 1.4rem;
+                                }
+
+                                @media (max-width: 991px) {
+                                    font-size: 1.2rem;
+                                }
+                            }
+
+                            p {
+                                display: flex;
+                                align-items: center;
+                                font-size: 1.4rem;
+                                line-height: 2.1rem;
+                                font-weight: 400;
+
+                                @include theme() {
+                                    color: theme-get("whatsHotPercentage");
+                                }
+
+                                span {
+                                    margin-right: 0.8rem;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

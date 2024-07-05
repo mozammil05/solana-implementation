@@ -1,0 +1,105 @@
+@import '../../../../Assets/theme/_var.scss';
+
+.CommonSelect {
+    z-index: 1;
+    position: relative;
+
+    .select__control {
+        // max-width: 10.8rem;
+        box-shadow: none;
+        padding-left: 0.8rem;
+        border-radius: 0.8rem;
+        height: 3.2rem;
+        min-height: unset;
+        cursor: pointer;
+
+        @include theme() {
+            background-color: theme-get('tokenSelect');
+            border: 1px solid theme-get('tokenSelect');
+        }
+
+        .select__value-container {
+            padding: 0;
+
+            .select__input-container {
+                padding: 0;
+                margin: 0;
+            }
+
+            .select__single-value {
+                padding: 0;
+                margin: 0;
+
+                @include theme() {
+                    color: theme-get('textClr');
+                }
+            }
+
+            .select__placeholder {
+                font-size: 1.4rem;
+
+                @include theme() {
+                    color: theme-get('textClr');
+                }
+
+                @media (max-width: 1279px) {
+                    font-size: 1.2rem;
+                }
+            }
+        }
+
+        .select__indicators {
+            .select__indicator-separator {
+                display: none;
+            }
+
+            .select__indicator {
+                padding: 0 0.8rem 0 0;
+
+                svg {
+                    path {
+                        @include theme() {
+                            fill: theme-get("textClr");
+                        }
+                    }
+                }
+            }
+        }
+
+        &.select__control--is-focused {
+            @include theme() {
+                border: 1px solid theme-get('tokenSelect');
+            }
+        }
+    }
+
+    .select__menu {
+        border-radius: 0.8rem;
+        overflow: hidden;
+
+        @include theme() {
+            background-color: theme-get("tokenSelect");
+        }
+
+        &-list {
+            padding: 0;
+
+            .select__option {
+                padding: 0.6rem 1rem;
+                cursor: pointer;
+                background-color: transparent;
+
+                @include theme() {
+                    color: theme-get("textClr");
+                }
+
+                &.select__option--is-selected,
+                &:hover {
+                    @include theme() {
+                        background-color: theme-get("tokenSelected");
+                    }
+                }
+            }
+        }
+    }
+}

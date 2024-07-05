@@ -1,0 +1,346 @@
+@import "../../../../Assets/theme/_var.scss";
+
+.lib_bridge_page {
+  padding: 0 1.2rem;
+
+  .CommonHeading {
+    margin-bottom: 2rem;
+  }
+
+  .bridge_card {
+    max-width: 50rem;
+    width: 100%;
+    margin: 0 auto;
+
+    .bridge_card_header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 1.7rem;
+
+      @media (max-width: 757px) {
+        margin-bottom: 1.2rem;
+      }
+
+      p {
+        font-weight: 600;
+      }
+
+      button {
+        font-size: 1.6rem;
+        line-height: 2.4rem;
+        font-weight: 400;
+        background-color: transparent;
+        border: none;
+        outline: none;
+
+        @include theme() {
+          color: theme-get("greenClr");
+        }
+      }
+    }
+
+    .bridge_card_inner {
+      border-radius: 0.8rem;
+      padding: 2.4rem;
+      backdrop-filter: blur(2.55rem);
+
+      @include theme() {
+        border: 1px solid theme-get("newsCardBorder");
+        background-color: theme-get("commonCardBg");
+      }
+
+      label,
+      h4 {
+        font-size: 1.4rem;
+        line-height: 2.1rem;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 0.8rem;
+
+        @media (max-width: 575px) {
+          font-size: 1.2rem;
+        }
+
+        @include theme() {
+          color: theme-get("textClr");
+        }
+      }
+
+      .select_network {
+        display: flex;
+        align-items: flex-end;
+
+        .select_network_box {
+          max-width: 19rem;
+          width: 100%;
+
+          button {
+            display: flex;
+            width: 100%;
+            height: 6.4rem;
+            border: none;
+            outline: none;
+            align-items: center;
+            padding: 0 2.9rem 0 2.3rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            border-radius: 1rem;
+            font-weight: 500;
+
+            @media (max-width: 1199px) {
+              padding: 0 2.2rem;
+            }
+
+            @media (max-width: 991px) {
+              padding: 0 1.8rem;
+              height: 5rem;
+            }
+
+            @media (max-width: 767px) {
+              padding: 0 1.4rem;
+              height: 4.6rem;
+              font-size: 1.3rem;
+            }
+
+            // .icon {
+            //   margin-right: 0.4rem;
+            //   width: 2rem;
+            //   height: 2rem;
+            //   flex-shrink: 0;
+            // }
+
+            svg {
+              margin-left: auto;
+            }
+
+            @include theme() {
+              background-color: theme-get("connectModalLeft");
+              color: theme-get("textClr");
+            }
+
+            .btn_inner_icon {
+              margin-right: 0.5rem;
+              width: 2.4rem;
+              height: 2.4rem;
+              flex-shrink: 0;
+            }
+          }
+        }
+
+        .swap_box {
+          height: 6.4rem;
+          width: 6.4rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+
+          @media (max-width: 991px) {
+            height: 5rem;
+          }
+
+          @media (max-width: 767px) {
+            height: 4.6rem;
+          }
+
+          button {
+            background-color: transparent;
+            border: none;
+            outline: none;
+            width: 4.5rem;
+            height: 4.5rem;
+            padding: 0;
+          }
+        }
+      }
+
+      .select_amount {
+        display: flex;
+        align-items: center;
+        padding: 1.6rem;
+        margin: 1.6rem 0;
+        border-radius: 1rem;
+
+        @include theme() {
+          background-color: theme-get("connectModalLeft");
+        }
+
+        > div {
+          flex: 1 1 50%;
+        }
+
+        .amountText {
+          font-size: 1.4rem;
+          line-height: 2.1rem;
+
+          @include theme() {
+            color: theme-get("theadClr");
+
+            span {
+              color: theme-get("yellowClr");
+            }
+          }
+        }
+
+        .amount_input {
+          max-width: 100%;
+          width: 100%;
+          background-color: transparent;
+          border: none;
+          padding-right: 1rem;
+          outline: none;
+          font-size: 2.4rem;
+          line-height: 3.6rem;
+          font-weight: 500;
+          margin-bottom: 0.4rem;
+
+          @media (max-width: 1199px) {
+            font-size: 2.2rem;
+          }
+
+          @media (max-width: 991px) {
+            font-size: 2rem;
+          }
+
+          @media (max-width: 767px) {
+            font-size: 1.8rem;
+          }
+
+          @media (max-width: 575px) {
+            font-size: 1.6rem;
+          }
+
+          @include theme() {
+            color: theme-get("textClr");
+
+            &::placeholder {
+              color: inherit;
+            }
+          }
+        }
+
+        .select_amount_right {
+          text-align: right;
+
+          > div {
+            margin-left: auto;
+            margin-bottom: 0.8rem;
+          }
+
+          .amount_token {
+            max-width: max-content;
+            padding: 0.5rem 2rem;
+            font-size: 1.6rem;
+            line-height: 2.4rem;
+            font-weight: 400;
+            border-radius: 0.8rem;
+            margin-bottom: 0.5rem;
+
+            @include theme() {
+              background-color: theme-get("tokenSelect");
+              border: 1px solid theme-get("tokenSelect");
+            }
+
+            img,
+            svg {
+              width: 2rem;
+              height: 2rem;
+              margin-right: 1rem;
+            }
+          }
+        }
+      }
+
+      .receiveAddInput {
+        margin: 1.6rem 0;
+
+        .leftIcon {
+          left: unset;
+          right: 0.8rem;
+          max-width: 1.4rem;
+          display: flex;
+          span {
+            cursor: pointer;
+            max-width: 100%;
+            svg {
+              max-width: 100%;
+            }
+          }
+        }
+        input {
+          padding-inline: 2rem 6rem;
+          @include theme() {
+            &::placeholder {
+              color: theme-get("subHeaderLink");
+            }
+          }
+        }
+      }
+
+      .previewBox {
+        .table-responsive {
+          border-radius: 0.8rem;
+
+          @include theme() {
+            background-color: theme-get("tokenSelect");
+          }
+
+          table {
+            margin-bottom: 0;
+
+            tbody {
+              tr {
+                td {
+                  border: none;
+                  font-size: 1.4rem;
+                  line-height: 2.1rem;
+                  font-weight: 400;
+                  padding: 0 0.8rem 0.8rem 0.8rem;
+                  white-space: nowrap;
+                  background: transparent;
+
+                  @media (max-width: 575px) {
+                    font-size: 1.2rem;
+                  }
+
+                  &:first-child {
+                    padding-left: 1.6rem;
+                  }
+
+                  &:last-child {
+                    padding-right: 1.6rem;
+                  }
+
+                  &.title_text {
+                    @include theme() {
+                      color: theme-get("theadClr");
+                    }
+                  }
+
+                  @include theme() {
+                    color: theme-get("textClr");
+                  }
+                }
+
+                &:first-child {
+                  td {
+                    padding-top: 1.6rem;
+                  }
+                }
+
+                &:last-child {
+                  padding-bottom: 1.6rem;
+                }
+              }
+            }
+          }
+        }
+      }
+
+      .approve_btn {
+        margin-top: 1.6rem;
+        border-radius: 0.8rem;
+      }
+    }
+  }
+}

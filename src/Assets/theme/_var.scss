@@ -1,0 +1,156 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+$baseFont: "Poppins", sans-serif;
+$baseFont2: 'Inter', sans-serif;
+$white: #fff;
+$black: #000;
+// $gradient1: linear-gradient(226.41deg, #4169EF 0%, #2A1D89 74.39%);
+// $gradient2: linear-gradient(226.41deg, #2A1D89 0%, #2A1D89 74.39%);
+// $gradient3: linear-gradient(226.41deg, #4169ef40 0%, rgba(42, 29, 137, 0.25) 74.39%);
+// $baseClr: #2A1D89;
+// $borderClr: #4169EF;
+// $borderClr2: #2A1D89;
+// $lightBlueText: #A4B1FF;
+// $labelOptionalClr :#939cbf;
+// $chooseXpBoxGradient: linear-gradient(180deg, #171D4F 0%, #120B2C 100%);
+// $scrollBar: linear-gradient(251.86deg, #00A8FC 0%, #0060EF 75.32%);
+// $inputBg: #2b3351;
+// $inputBgFocus: rgba(12, 16, 40, 0.5);
+// $modalBorder: #242C66;
+// $connectModalLeft: #040118;
+// $connectModalRight: #131027;
+// $connectModalHeadings: #02b3aa;
+// $authBg: #1E1E1E;
+// $subHeaderLink: #b6b3c9;
+// $subHeaderLinkActiveBg: rgba(12, 191, 182, 0.2);
+// $subHeaderLinkActiveBorder: #0CBFB6;
+// $sliderDotBg: rgba(12, 191, 182, 0.48);
+// $sliderDotBgActive: linear-gradient(258.2deg, #02B3AA 4.13%, #5067EB 34.69%, #2A1D89 81.11%);
+// $commonCardBg: #181431;
+// $newsCardDate: #B6B3C9;
+// $newsCardActiveDot: #FFC756;
+// $newsCardBorder: #332E55;
+// $portfolioNegativeTxt: #FF8282;
+// $portfolioPositiveTxt: #b6b3c9;
+// $whatsHotTokenName: #353057;
+// $whatsHotPercentage: #0CBFB6;
+
+
+$themes: (
+    light: (whiteClr: #fff,
+        blackClr: #000,
+        gradient1: linear-gradient(226.41deg, #4169EF 0%, #2A1D89 74.39%),
+        gradient2: linear-gradient(226.41deg, #2A1D89 0%, #2A1D89 74.39%),
+        gradient3: linear-gradient(226.41deg, #4169ef40 0%, rgba(42, 29, 137, 0.25) 74.39%),
+        baseClr: #2A1D89,
+        borderClr: #4169EF,
+        borderClr2: #2A1D89,
+        lightBlueText: #A4B1FF,
+        labelOptionalClr :#939cbf,
+        chooseXpBoxGradient: linear-gradient(180deg, #171D4F 0%, #120B2C 100%),
+        scrollBar: linear-gradient(251.86deg, #00A8FC 0%, #0060EF 75.32%),
+        inputBg: #2b3351,
+        inputBgFocus: rgba(12, 16, 40, 0.5),
+        modalBorder: #242C66,
+        connectModalLeft: #040118,
+        connectModalRight: #131027,
+        connectModalHeadings: #02b3aa,
+        authBg: #040118,
+        subHeaderLink: #b6b3c9,
+        subHeaderLinkActiveBg: rgba(12, 191, 182, 0.2),
+        subHeaderLinkActiveBorder: #0CBFB6,
+        sliderDotBg: rgba(12, 191, 182, 0.48),
+        sliderDotBgActive: linear-gradient(258.2deg, #02B3AA 4.13%, #5067EB 34.69%, #2A1D89 81.11%),
+        commonCardBg: #181431,
+        newsCardDate: #B6B3C9,
+        newsCardActiveDot: #FFC756,
+        newsCardBorder: #332E55,
+        portfolioNegativeTxt: #FF8282,
+        portfolioPositiveTxt: #b6b3c9,
+        whatsHotTokenName: #353057,
+        whatsHotPercentage: #0CBFB6,
+        mainLayoutbg: #040118 linear-gradient(180deg, rgba(18, 32, 70, 0.5) 0%, rgba(9, 8, 25, 0.5) 100%),
+        mainLayoutCircle1: linear-gradient(89.06deg, rgba(65, 105, 239, 0.32) -3.6%, rgba(65, 105, 239, 0) 37.41%),
+        mainLayoutCircle2: linear-gradient(300.05deg, rgba(65, 105, 239, 0.24) 22.1%, rgba(65, 105, 239, 0) 60.23%),
+        textClr: white,
+        theadClr: #B6B3C9,
+        tradeHistoryDate: #2B264D,
+        buyBtn:#0CBFB6,
+        sellBtn: #FF8282,
+        tokenSelect: #2B264D,
+        tokenSelected: #241f42,
+        greenClr: #0cbfb6,
+        redClr: #ff8282,
+        yellowClr:#FFC756,
+        fulfillingClr:#91d4a4,
+    ),
+    dark: (whiteClr: #fff,
+        blackClr: #000,
+        gradient1: linear-gradient(226.41deg, #4169EF 0%, #2A1D89 74.39%),
+        gradient2: linear-gradient(226.41deg, #2A1D89 0%, #2A1D89 74.39%),
+        gradient3: linear-gradient(226.41deg, #4169ef40 0%, rgba(42, 29, 137, 0.25) 74.39%),
+        baseClr: #2A1D89,
+        borderClr: #4169EF,
+        borderClr2: #2A1D89,
+        lightBlueText: #A4B1FF,
+        labelOptionalClr :#939cbf,
+        chooseXpBoxGradient: linear-gradient(180deg, #171D4F 0%, #120B2C 100%),
+        scrollBar: linear-gradient(251.86deg, #00A8FC 0%, #0060EF 75.32%),
+        inputBg: #2b3351,
+        inputBgFocus: rgba(12, 16, 40, 0.5),
+        modalBorder: #242C66,
+        connectModalLeft: #040118,
+        connectModalRight: #131027,
+        connectModalHeadings: #02b3aa,
+        authBg: #040118,
+        subHeaderLink: #b6b3c9,
+        subHeaderLinkActiveBg: rgba(12, 191, 182, 0.2),
+        subHeaderLinkActiveBorder: #0CBFB6,
+        sliderDotBg: rgba(12, 191, 182, 0.48),
+        sliderDotBgActive: linear-gradient(258.2deg, #02B3AA 4.13%, #5067EB 34.69%, #2A1D89 81.11%),
+        commonCardBg: #181431,
+        newsCardDate: #B6B3C9,
+        newsCardActiveDot: #FFC756,
+        newsCardBorder: #332E55,
+        portfolioNegativeTxt: #FF8282,
+        portfolioPositiveTxt: #b6b3c9,
+        whatsHotTokenName: #353057,
+        whatsHotPercentage: #0CBFB6,
+        mainLayoutbg: #040118 linear-gradient(180deg, rgba(18, 32, 70, 0.5) 0%, rgba(9, 8, 25, 0.5) 100%),
+        mainLayoutCircle1: linear-gradient(89.06deg, rgba(65, 105, 239, 0.32) -3.6%, rgba(65, 105, 239, 0) 37.41%),
+        mainLayoutCircle2: linear-gradient(300.05deg, rgba(65, 105, 239, 0.24) 22.1%, rgba(65, 105, 239, 0) 60.23%),
+        textClr: white,
+        theadClr: #B6B3C9,
+        tradeHistoryDate: #2B264D, buyBtn:#0CBFB6,
+        sellBtn: #FF8282,
+        tokenSelect: #2B264D,
+        tokenSelected: #241f42, greenClr: #0cbfb6,
+        redClr: #ff8282,
+        yellowClr:#FFC756,
+        fulfillingClr:#91d4a4,
+    ),
+);
+
+@function theme-get($key) {
+    @return map-get($theme-map, $key);
+}
+
+@mixin theme($themes: $themes) {
+
+    @each $theme,
+    $map in $themes {
+        .theme-#{$theme} & {
+            $theme-map: () !global;
+
+            @each $key,
+            $submap in $map {
+                $value: map-get(map-get($themes, $theme), '#{$key}');
+                $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+
+            @content;
+            $theme-map: null !global;
+        }
+
+    }
+}
