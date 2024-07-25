@@ -417,24 +417,10 @@ const MemeMintBridge = () => {
     }
   };
 
-  const getButtonTitle = () => {
-    if (loading) return "Processing...";
-    if (!walletAddress && !PhantomWalletAddress) return "Connect Wallet";
 
-    if (selectedNetwork === "BSC" || selectedNetwork === "Ethereum") {
-      return "Approve and Deposit";
-    } else if (selectedNetwork === "Solana") {
-      return "Deposit";
-    }
-
-    return "Connect Wallet";
-  };
-
-  const onePercent = amount * (1 / 100);
 
   const fetchSolanaBalance = async () => {
     try {
-      // setBalance("");
       const wallet = new PublicKey(PhantomWalletAddress);
       const balance = await connection.getBalance(wallet);
       const solBalance = balance / LAMPORTS_PER_SOL;
@@ -647,13 +633,6 @@ const MemeMintBridge = () => {
           loading={loading}
           getTransactionHistory={getTransactionHistory}
           hasMore={hasMore}
-        />
-        <TransactionDone
-          show={transactionModal}
-          handleClose={setTransactionModal}
-          transaction={transaction}
-          solanaTransactionResult={solanaTransactionResult}
-          approval={approval}
         />
       </section>
     </>
