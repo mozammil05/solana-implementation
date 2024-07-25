@@ -16,6 +16,7 @@ export const connection = new Connection(endpoint, commitmentLevel);
 
 export const TOKEN_PROGRAM_ID = new PublicKey(idl.metadata.address); // program ID(smartContract address )
 export const Token_PROGRAM_INTERFACE = JSON.parse(JSON.stringify(idl));
+
 export const mintAccount = new PublicKey(
   "CwMLxTdkGbvdWHV4i1v43431tcJXuBVXYQ91hmh1aDmh"
 );
