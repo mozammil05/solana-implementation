@@ -38,9 +38,6 @@ const WalletDropdown = ({ dropdownBtnRef, handleClose }) => {
     (state: any) => state?.user?.userWalletAddress
   );
 
-  const PhantomWalletAddress = useSelector(
-    (state: any) => state.user.PhantomWalletAddress
-  );
   const { chain: CONNECTED_CHAIN_ID }: any = useNetwork();
   const { address } = useAccount();
   const { disconnect: resetConfig } = useDisconnect();

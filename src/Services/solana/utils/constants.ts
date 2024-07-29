@@ -33,8 +33,7 @@ export const tokenProgram = new PublicKey(
   "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
 );
 
-export const vaultAta = new PublicKey("VAULT_PUBLIC_KEY_HERE");
+export const vaultAta = new PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA");
+export const userStake = new PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA");
 
-export const userStake = new PublicKey("USER_STAKE_PUBLIC_KEY_HERE");
-
-export const stakingAccount = new PublicKey("STAKING_ACCOUNT_PUBLIC_KEY_HERE");
+export const stakingAccount = new PublicKey("TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA");
