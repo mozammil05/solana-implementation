@@ -32,3 +32,9 @@ export const initial = new PublicKey(
 export const tokenProgram = new PublicKey(
   "TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA"
 );
+
+export const vaultAta = new PublicKey("VAULT_PUBLIC_KEY_HERE");
+
+export const userStake = new PublicKey("USER_STAKE_PUBLIC_KEY_HERE");
+
+export const stakingAccount = new PublicKey("STAKING_ACCOUNT_PUBLIC_KEY_HERE");
