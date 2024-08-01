@@ -19,6 +19,7 @@ const MemeMintBridge = () => {
   const PhantomWalletAddress = useSelector(
     (state: any) => state.user.PhantomWalletAddress
   );
+  console.log("balance", balance);
 
   const formik = useFormik({
     initialValues: {

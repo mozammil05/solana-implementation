@@ -96,23 +96,6 @@ const WalletDropdown = ({ dropdownBtnRef, handleClose }) => {
     (isMobile && browserName?.toLowerCase() === "chrome webview") ||
     (isMobile && browserName?.toLowerCase() === "webkit");
 
-  const handleConnect = async (index: any) => {
-    try {
-      switch (index) {
-        case 0:
-          await connectWithMetamask();
-          break;
-        case 1:
-          await connectWithPhantom();
-          break;
-        default:
-          break;
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   // Metamask connection function
   const connectWithMetamask = async () => {
     try {
@@ -161,19 +144,19 @@ const WalletDropdown = ({ dropdownBtnRef, handleClose }) => {
       {phantomWallet ? (
         <>
           {phantomWallet && (
-            <div>
+            <div onClick={walletDisconnect}>
               <WalletMultiButton />
             </div>
           )}
 
-          {walletAddress && (
+          {/* {phantomWallet && (
             <button
               className="ButtonCustom connect_wallet bordered-green"
               onClick={walletDisconnect}
             >
-              {formatAddress(walletAddress)}
+              {formatAddress(phantomWallet)}
             </button>
-          )}
+          )} */}
         </>
       ) : (
         <>
