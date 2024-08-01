@@ -139,6 +139,7 @@ const WalletDropdown = ({ dropdownBtnRef, handleClose }) => {
     }
   };
 
+  
   return (
     <div className="wallet_connector">
       {phantomWallet ? (
